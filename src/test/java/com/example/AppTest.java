@@ -163,5 +163,56 @@ public class AppTest {
     public void testAnagramsUsingArrayWithSpaces() {
         assertTrue(AnagramExample.areAnagramsUsingArray("Dormitory", "Dirty room"));
     }
+
+    // Test cases for Longest Substring Without Repeating Characters
+    @Test
+    public void testLongestSubstringTypicalCase() {
+        assertEquals(3, LongestSubstringExample.lengthOfLongestSubstring("abcabcbb"));
+    }
+
+    @Test
+    public void testLongestSubstringAllRepeated() {
+        assertEquals(1, LongestSubstringExample.lengthOfLongestSubstring("bbbbb"));
+    }
+
+    @Test
+    public void testLongestSubstringWithWindowShift() {
+        assertEquals(3, LongestSubstringExample.lengthOfLongestSubstring("pwwkew"));
+    }
+
+    @Test
+    public void testLongestSubstringEmptyString() {
+        assertEquals(0, LongestSubstringExample.lengthOfLongestSubstring(""));
+    }
+
+    @Test
+    public void testLongestSubstringNullString() {
+        assertEquals(0, LongestSubstringExample.lengthOfLongestSubstring(null));
+    }
+
+    @Test
+    public void testLongestSubstringSingleCharacter() {
+        assertEquals(1, LongestSubstringExample.lengthOfLongestSubstring("a"));
+    }
+
+    @Test
+    public void testLongestSubstringRepeatingInsideWindow() {
+        assertEquals(3, LongestSubstringExample.lengthOfLongestSubstring("dvdf"));
+    }
+
+    @Test
+    public void testLongestSubstringDuplicateAtBoundary() {
+        assertEquals(2, LongestSubstringExample.lengthOfLongestSubstring("abba"));
+    }
+
+    @Test
+    public void testLongestSubstringWithSpaces() {
+        assertEquals(3, LongestSubstringExample.lengthOfLongestSubstring("a b a"));
+    }
+
+    @Test
+    public void testLongestSubstringLongUniqueRun() {
+        assertEquals(6, LongestSubstringExample.lengthOfLongestSubstring("tmmzuxt"));
+    }
 }
 

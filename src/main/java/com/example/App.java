@@ -10,7 +10,8 @@ public class App {
     public static void main(String[] args) throws IOException {
         System.out.println("Welcome to srkInterview Java Project!");
         BufferedWriter bufferedWriter = new BufferedWriter(new java.io.OutputStreamWriter(System.out));
-        bufferedWriter.write("Hello, World!");
+        bufferedWriter.write("Longest substring without repeating characters in 'abcabcbb' = "
+                + LongestSubstringExample.lengthOfLongestSubstring("abcabcbb"));
         bufferedWriter.flush();
     }
 }
