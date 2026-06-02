@@ -16,6 +16,7 @@ public class ReverseStringExample {
         System.out.println(countWords(original));
         System.out.println(findFirstNonRepeatedCharacter("introduction"));
         System.out.println("'listen' and 'silent': " + areAnagrams("listen", "silent"));
+        System.out.println("Reverse recursive: " + reverseRecursive(original));
     }
 
     public static String reverseString(String original) {
@@ -95,5 +96,15 @@ public class ReverseStringExample {
         Arrays.sort(c1);
         Arrays.sort(c2);
         return Arrays.equals(c1, c2);
+    }
+
+    public static String reverseRecursive(String str) {
+        String cleaned = str.replaceAll("[^a-zA-Z0-9\\s]", "");
+        // str.replaceAll("[^a-zA-Z0-9\\s]", "")
+        if (cleaned.isEmpty()) {
+            return str;
+        }
+
+        return reverseString(cleaned.substring(1)) + cleaned.charAt(0);
     }
 }
