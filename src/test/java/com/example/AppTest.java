@@ -10,7 +10,7 @@ public class AppTest {
     
     @Test
     public void testAppExists() {
-        assertNotNull(new App());
+        assertEquals("com.example", App.class.getPackage().getName());
     }
 
     // Test cases for findFirstNonRepeatedCharacter
@@ -213,6 +213,37 @@ public class AppTest {
     @Test
     public void testLongestSubstringLongUniqueRun() {
         assertEquals(6, LongestSubstringExample.lengthOfLongestSubstring("tmmzuxt"));
+    }
+
+    // Test cases for Word Break / String Segmentation
+    @Test
+    public void testWordBreakBasicTrue() {
+        assertTrue(WordBreakExample.wordBreak("leetcode", java.util.Arrays.asList("leet", "code")));
+    }
+
+    @Test
+    public void testWordBreakMultipleWordsTrue() {
+        assertTrue(WordBreakExample.wordBreak("applepenapple", java.util.Arrays.asList("apple", "pen")));
+    }
+
+    @Test
+    public void testWordBreakNegativeCase() {
+        assertFalse(WordBreakExample.wordBreak("catsandog", java.util.Arrays.asList("cats", "dog", "sand", "and", "cat")));
+    }
+
+    @Test
+    public void testWordBreakEmptyString() {
+        assertTrue(WordBreakExample.wordBreak("", java.util.Arrays.asList("a", "b")));
+    }
+
+    @Test
+    public void testWordBreakNullString() {
+        assertFalse(WordBreakExample.wordBreak(null, java.util.Arrays.asList("a", "b")));
+    }
+
+    @Test
+    public void testWordBreakEmptyDictionary() {
+        assertFalse(WordBreakExample.wordBreak("anything", java.util.Collections.emptyList()));
     }
 }
 
