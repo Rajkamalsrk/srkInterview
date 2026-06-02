@@ -66,6 +66,8 @@ public class WordBreakExample {
             }
         }
 
+      //  System.out.println("dictionary" + dictionary);
+
         return dp[s.length()];
     }
 }
